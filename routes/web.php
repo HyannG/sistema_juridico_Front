@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use App\Http\Controllers\ProcessoController;
+
+Route::get('/', [ProcessoController::class, 'index']);
+
+
+Route::get('/processos', [ProcessoController::class, 'index']);
